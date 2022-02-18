@@ -1,4 +1,9 @@
-* High Sierra
+# VBoxManage configure before install macos on virtualbox
+
+## Configures
+
+* macOS 10.13 High Sierra public on September 25, 2017
+
 https://www.howtogeek.com/289594/how-to-install-macos-sierra-in-virtualbox-on-windows-10/
 
 VBoxManage modifyvm "High Sierra" --cpuidset 00000001 000306a9 04100800 7fbae3ff bfebfbff
@@ -9,10 +14,17 @@ VBoxManage setextradata "High Sierra" "VBoxInternal/Devices/smc/0/Config/DeviceK
 VBoxManage setextradata "High Sierra" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
 
 
-* Catalina
+* macOS 10.14 Mojave released on September 24, 2018
 
+* macOS 10.15 Catalina released on October 7, 2019
+VBoxManage modifyvm "catalina" --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
+VBoxManage setextradata "catalina" "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "iMac11,3"
+VBoxManage setextradata "catalina" "VBoxInternal/Devices/efi/0/Config/DmiSystemVersion" "1.0"
+VBoxManage setextradata "catalina" "VBoxIternal/Devices/efi/0/Config/DmiBoardProduct" "Iloveapple"
+VBoxManage setextradata "catalina" "VBoxInternal/Devices/smc/0/Config/Devicekey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
+VBoxManage setextradata "catalina" "VBoxIternal/Devices/smc/0/Config/GetKeyFromRealSMC" "1"
 
-* Big Ser
+* macOS 11 Big Sur public on November 12, 2020
 https://techsprobe.com/install-macos-big-sur-on-virtualbox-on-windows-pc/
 VBoxManage modifyvm "macos" --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
 VBoxManage setextradata "macos" "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "iMac19,1"
@@ -20,3 +32,7 @@ VBoxManage setextradata "macos" "VBoxInternal/Devices/efi/0/Config/DmiSystemVers
 VBoxManage setextradata "macos" "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Mac-AA95B1DDAB278B95"
 VBoxManage setextradata "macos" "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
 VBoxManage setextradata "macos" "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
+
+
+## Set revolution
+VBoxManage setextradata "name virtualbox system" "VBoxInternal2/EfiGraphicsResolution" "1920x1080"
